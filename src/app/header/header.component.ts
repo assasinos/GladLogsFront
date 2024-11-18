@@ -8,7 +8,6 @@ import { ConfigService } from '../Services/config.service';
   standalone: true,
   imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
 })
 export class HeaderComponent implements OnInit {
   constructor(private http: HttpClient, private config: ConfigService) {}
@@ -74,4 +73,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.getChats();
   }
+
+  //TODO: Add Routing to log page on button click
 }
