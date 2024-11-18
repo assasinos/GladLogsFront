@@ -1,0 +1,26 @@
+<header class="bg-secondaryBackground text-primary-foreground p-4 text-textPrimary">
+    <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <h1 class="text-2xl font-bold">GladLogs</h1>
+
+        <div class="flex flex-col sm:flex-row justify-between gap-2 flex-grow content-center">
+            <label for="nickname-input" class="sr-only">Nickname Input</label>
+            <input type="text" id="nickname-input"
+                class="bg-background border border-border text-textPrimary text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5 placeholder-textSecondary"
+                placeholder="Nickname" />
+
+            <label for="chat-select" class="sr-only">Chat Selection</label>
+            <select id="chat-select"
+                class="bg-background border border-border text-textPrimary text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5 placeholder-textSecondary">
+                <option selected hidden>Choose a chat</option>
+                @for (item of _chats; track $index) {
+                <option value="{{ item.id }}">{{ item.id }}</option>
+                }
+            </select>
+
+            <button type="button"
+                class="h-full text-textPrimary bg-primary hover:bg-hover focus:ring-4 focus:ring-accent font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">
+                Search
+            </button>
+        </div>
+    </div>
+</header>
