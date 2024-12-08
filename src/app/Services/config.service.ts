@@ -7,7 +7,7 @@ export class ConfigService {
 
   constructor() { }
 
-  private apiUrl = 'https://localhost:7105/';
+  private apiUrl = 'https://api.assasinos.live/';
 
   public GetApiUrl(): string {
     return this.apiUrl;
