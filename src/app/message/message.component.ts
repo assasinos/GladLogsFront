@@ -3,7 +3,7 @@ import { Message } from '../../types/Message';
 
 @Component({
     selector: 'app-message',
-    imports: [],
+    standalone: true,
     templateUrl: './message.component.html'
 })
 export class MessageComponent {

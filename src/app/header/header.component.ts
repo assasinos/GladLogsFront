@@ -1,17 +1,23 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, Inject, OnInit } from '@angular/core';
 import { Chat } from '../../types/Chat';
 import { ConfigService } from '../services/config.service';
 import {FormsModule} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
 @Component({
     selector: 'app-header',
-    imports: [FormsModule],
-    templateUrl: './header.component.html'
+    imports: [FormsModule, BrowserModule],
+    templateUrl: './header.component.html',
+    standalone: true
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private http: HttpClient, private config: ConfigService, private router: Router, private route :ActivatedRoute) {}
+  constructor(
+    @Inject(HttpClient) private http: HttpClient,
+    @Inject(ConfigService) private config: ConfigService,
+    @Inject(Router) private router: Router,
+    @Inject(ActivatedRoute) private route: ActivatedRoute
+  ) {}
 
   _chats:Chat[] | null = null;
 

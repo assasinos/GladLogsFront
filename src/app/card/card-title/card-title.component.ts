@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-card-title',
-    imports: [],
+    standalone: true,
     templateUrl: './card-title.component.html'
 })
 export class CardTitleComponent {

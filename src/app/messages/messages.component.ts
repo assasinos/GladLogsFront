@@ -11,6 +11,7 @@ import { MessageComponent } from '../message/message.component';
 
 @Component({
     selector: 'app-messages',
+    standalone: true,
     imports: [
         CardComponent,
         CardHeaderComponent,
