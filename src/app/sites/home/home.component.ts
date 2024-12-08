@@ -6,6 +6,7 @@ import { CardContentComponent } from "../../card/card-content/card-content.compo
 
 @Component({
     selector: 'app-home',
+    standalone: true,
     imports: [CardComponent, CardHeaderComponent, CardTitleComponent, CardContentComponent],
     templateUrl: './home.component.html'
 })
