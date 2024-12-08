@@ -10,16 +10,15 @@ import { ConfigService } from '../services/config.service';
 import { MessageComponent } from '../message/message.component';
 
 @Component({
-  selector: 'app-messages',
-  standalone: true,
-  imports: [
-    CardComponent,
-    CardHeaderComponent,
-    CardTitleComponent,
-    CardContentComponent,
-    MessageComponent,
-  ],
-  templateUrl: './messages.component.html',
+    selector: 'app-messages',
+    imports: [
+        CardComponent,
+        CardHeaderComponent,
+        CardTitleComponent,
+        CardContentComponent,
+        MessageComponent,
+    ],
+    templateUrl: './messages.component.html'
 })
 export class MessagesComponent {
   @Input() Week: Week | null = null;

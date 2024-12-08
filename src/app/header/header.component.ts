@@ -5,10 +5,9 @@ import { ConfigService } from '../services/config.service';
 import {FormsModule} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './header.component.html',
+    selector: 'app-header',
+    imports: [FormsModule],
+    templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
 

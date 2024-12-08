@@ -11,10 +11,9 @@ import { CardContentComponent } from "../../card/card-content/card-content.compo
 import { MessagesComponent } from "../../messages/messages.component";
 
 @Component({
-  selector: 'app-logs',
-  standalone: true,
-  imports: [ MessagesComponent],
-  templateUrl: './logs.component.html',
+    selector: 'app-logs',
+    imports: [MessagesComponent],
+    templateUrl: './logs.component.html'
 })
 export class LogsComponent implements OnInit {
 
