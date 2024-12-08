@@ -1,6 +1,6 @@
 <header class="bg-secondaryBackground text-primary-foreground p-4 text-textPrimary">
     <div class="container flex flex-col sm:flex-row items-center justify-between gap-4">
-        <h1 class="text-2xl font-bold">GladLogs</h1>
+        <h1 class="text-2xl font-bold"><a href="/">GladLogs</a></h1>
 
         <div class="flex flex-col sm:flex-row justify-between gap-2 flex-grow content-center">
             <label for="nickname-input" class="sr-only">Nickname Input</label>
@@ -11,9 +11,9 @@
             <label for="chat-select" class="sr-only">Chat Selection</label>
             <select id="chat-select" [(ngModel)]="_chat"
                 class="bg-background border border-border text-textPrimary text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5 placeholder-textSecondary">
-                <option selected hidden>Choose a chat</option>
+                <option [attr.selected]="_chat == 'Choose a chat' ? 'selected' : null" hidden>Choose a chat</option>
                 @for (item of _chats; track $index) {
-                <option value="{{ item.id }}">{{ item.id }}</option>
+                <option value="{{ item.id }}" [attr.selected]="_chat == item.id ? 'selected' : null">{{ item.id }}  </option>
                 }
             </select>
 

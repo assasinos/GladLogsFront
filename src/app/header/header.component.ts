@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Chat } from '../../types/Chat';
 import { ConfigService } from '../services/config.service';
 import {FormsModule} from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private http: HttpClient, private config: ConfigService, private router: Router) {}
+  constructor(private http: HttpClient, private config: ConfigService, private router: Router, private route :ActivatedRoute) {}
 
   _chats:Chat[] | null = null;
 
@@ -77,8 +77,29 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.getChats();
+    //Get Nickname and Chat from route
+    this.setNicknameAndChat()
   }
 
+
+  setNicknameAndChat(){
+    this.route.queryParams.subscribe(params => {
+
+      if (!params['user'] || !params['chat']) {
+        return;
+      }
+
+      //Get the user and chat id
+      this._nickname = params['user'];
+      this._chat = params['chat'];
+
+
+    });
+  }
+
+  /**
+   * Event handler for the search button click event.
+   */
   searchButtonClicked() {
     console.log(`Search button clicked with Name: ${this._nickname} and Chat: ${this._chat}`);
     if (this._nickname === "" || this._chat === "Choose a chat") {

@@ -13,7 +13,7 @@ import { MessagesComponent } from "../../messages/messages.component";
 @Component({
   selector: 'app-logs',
   standalone: true,
-  imports: [CardComponent, CardHeaderComponent, CardTitleComponent, CardContentComponent, MessagesComponent],
+  imports: [ MessagesComponent],
   templateUrl: './logs.component.html',
 })
 export class LogsComponent implements OnInit {
