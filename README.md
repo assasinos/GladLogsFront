@@ -1,27 +1,66 @@
 # GladLogsFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+GladLogs is an application designed to collect and display Twitch messages from various channels. This project is built using Angular and Tailwind CSS, providing a responsive and modern user interface. This is just the frontend for my backend app, which source code is available at [GladLogsApi](https://github.com/assasinos/GladLogsApi).
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Message Collection**: Collects and stores Twitch messages from specified channels.
+- **User Interface**: Displays messages in a user-friendly format.
+- **Search Functionality**: Allows users to search for messages by nickname and chat.
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular**: A platform for building mobile and desktop web applications.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **TypeScript**: A strongly typed programming language that builds on JavaScript.
+- **RxJS**: A library for reactive programming using observables.
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
 
-## Running unit tests
+- Node.js (v22.11.0)
+- Angular CLI
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installation
 
-## Running end-to-end tests
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/assasinos/GladLogsFront.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd GladLogsFront
+    ```
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Running the Application
 
-## Further help
+To start the development server, run:
+```bash
+ng serve
+```
+Navigate to `http://localhost:4200/` in your browser to view the application.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Building the Application
+
+To build the project, run:
+```bash
+ng build
+```
+The build artifacts will be stored in the `dist/` directory.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or support, please contact [Gladlogs@assasinos.live](mailto:Gladlogs@assasinos.live).
