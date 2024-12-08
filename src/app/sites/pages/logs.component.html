@@ -1,0 +1,30 @@
+
+
+<div class="container px-4 py-8 text-textPrimary rounded-lg items-center flex flex-col gap-4">
+
+    @if (!weeks) {
+        <h3  class="bg-primary text-center w-fit text-sm px-5 py-2.5 me-2 mb-2 flex flex-row rounded-lg">
+            <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V4a10 10 0 00-10 10h2zm2 0a6 6 0 016-6V4a8 8 0 00-8 8h2zm2 0a4 4 0 014-4V4a6 6 0 00-6 6h2zm2 0a2 2 0 012-2V4a4 4 0 00-4 4h2z">
+                </path>
+            </svg>
+            Loading...
+        </h3>
+    } 
+    @else if (!weeks.length) {
+        <h3 class="bg-secondaryBackground text-center w-fit text-sm px-5 py-2.5 me-2 mb-2 flex flex-row rounded-lg">
+            There are no messages to display for &nbsp;<span class="text-primary">{{username}}</span>
+        </h3>
+    }
+    @else {
+        @for (week of weeks; track $index) {
+            <app-messages [Week]="week" [Username]="username" [Chatname]="chatName" class="max-w-full"></app-messages>
+        }
+    }
+
+
+
+
+</div>

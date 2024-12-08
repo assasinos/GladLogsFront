@@ -1,18 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Chat } from '../../types/Chat';
-import { ConfigService } from '../Services/config.service';
-
+import { ConfigService } from '../services/config.service';
+import {FormsModule} from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
-  constructor(private http: HttpClient, private config: ConfigService) {}
+
+  constructor(private http: HttpClient, private config: ConfigService, private router: Router) {}
 
   _chats:Chat[] | null = null;
+
+  _nickname:string = "";
+  _chat:string = "Choose a chat";
 
 
     /**
@@ -74,5 +79,18 @@ export class HeaderComponent implements OnInit {
     this.getChats();
   }
 
-  //TODO: Add Routing to log page on button click
+  searchButtonClicked() {
+    console.log(`Search button clicked with Name: ${this._nickname} and Chat: ${this._chat}`);
+    if (this._nickname === "" || this._chat === "Choose a chat") {
+      console.log("Invalid input");
+      return;
+    }
+
+
+    //Route to logs
+    this.router.navigate(['/logs'], {queryParams: {user: this._nickname, chat: this._chat}}).then(() => {
+      window.location.reload(); // Reload the page with new search results
+    });
+
+  }
 }

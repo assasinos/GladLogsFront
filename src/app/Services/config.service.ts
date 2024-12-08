@@ -14,7 +14,16 @@ export class ConfigService {
   }
 
   public GetChatsEndpoint(): string {
-    return `${this.GetApiUrl()}Chats`;
+    return `${this.GetApiUrl()}chats`;
+  }
+
+  public GetMessagesEndpoint(username:string, chat:string, weekId:string): string {
+    return `${this.GetApiUrl()}messages?UserId=${username}&WeekId=${weekId}&ChatId=${chat}`;
+  }
+
+  public getWeeksEndpoint(username :string, chat:string): string {
+    return `${this.GetApiUrl()}weeks?UserName=${username}&ChatName=${chat}`;
+
   }
 
 
