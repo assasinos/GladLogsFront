@@ -4,10 +4,10 @@ import { Chat } from '../../types/Chat';
 import { ConfigService } from '../services/config.service';
 import {FormsModule} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 @Component({
     selector: 'app-header',
-    imports: [FormsModule, BrowserModule],
+    imports: [FormsModule, CommonModule],
     templateUrl: './header.component.html',
     standalone: true
 })
